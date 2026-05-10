@@ -136,7 +136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &57924625
 RectTransform:
   m_ObjectHideFlags: 0
@@ -569,11 +569,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1310e54dd0f94554a987a72775a439b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
-  currentDialogue: {fileID: 0}
-  currentLineIndex: 0
   npcNameText: {fileID: 1963843165}
   npcTitleText: {fileID: 2093660498}
   dialogueLineText: {fileID: 636708633}
+  dialogueBox: {fileID: 57924624}
 --- !u!1 &1321256600
 GameObject:
   m_ObjectHideFlags: 0

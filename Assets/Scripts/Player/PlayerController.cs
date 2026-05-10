@@ -6,35 +6,36 @@ namespace Player
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private float moveSpeed = 5f;
-        [SerializeField] private Vector2Int currentDirection = Vector2Int.zero;
+        
+        private Vector2 _currentDirection = Vector2.zero;
 
         private void Update()
         {
             if (Keyboard.current.upArrowKey.isPressed)
             {
-                currentDirection = Vector2Int.up;
+                _currentDirection = Vector2.up;
             }
             else if (Keyboard.current.downArrowKey.isPressed)
             {
-                currentDirection = Vector2Int.down;
+                _currentDirection = Vector2.down;
             }
             else if (Keyboard.current.rightArrowKey.isPressed)
             {
-                currentDirection = Vector2Int.right;
+                _currentDirection = Vector2.right;
             }
             else if (Keyboard.current.leftArrowKey.isPressed)
             {
-                currentDirection = Vector2Int.left;
+                _currentDirection = Vector2.left;
             }
             else
             {
-                currentDirection = Vector2Int.zero;
+                _currentDirection = Vector2.zero;
             }
         }
 
         private void FixedUpdate()
         {
-            transform.Translate(new Vector3Int(currentDirection.x, currentDirection.y, 0));
+            transform.Translate(_currentDirection * (moveSpeed * Time.fixedDeltaTime));
         }
     }
 }
