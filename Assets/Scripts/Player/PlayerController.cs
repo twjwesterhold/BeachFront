@@ -8,6 +8,17 @@ namespace Player
         [SerializeField] private float moveSpeed = 5f;
         
         private Vector2 _currentDirection = Vector2.zero;
+        private Rigidbody2D _rigidbody;
+
+        private void Awake()
+        {
+            _rigidbody = GetComponent<Rigidbody2D>();
+            GameObject spawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint");
+            if (spawnPoint != null)
+            {
+                transform.position = spawnPoint.transform.position;
+            }
+        }
 
         private void Update()
         {
@@ -35,7 +46,7 @@ namespace Player
 
         private void FixedUpdate()
         {
-            transform.Translate(_currentDirection * (moveSpeed * Time.fixedDeltaTime));
+            _rigidbody.MovePosition(_rigidbody.position + _currentDirection * (moveSpeed * Time.fixedDeltaTime));
         }
     }
 }
