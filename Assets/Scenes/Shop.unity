@@ -3480,6 +3480,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4814415534613852704, guid: 8eb747d5d889846dd834554dbec40e51, type: 3}
+      propertyPath: sceneName
+      value: BeachTown
+      objectReference: {fileID: 0}
     - target: {fileID: 5875104176691751453, guid: 8eb747d5d889846dd834554dbec40e51, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5

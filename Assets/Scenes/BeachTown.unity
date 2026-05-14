@@ -29098,6 +29098,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6064311583867463289, guid: fe001de73f1a145bf84b9cd7c1e1660c, type: 3}
+      propertyPath: Lens.OrthographicSize
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6064311583867463289, guid: fe001de73f1a145bf84b9cd7c1e1660c, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
       objectReference: {fileID: 624403813}
@@ -29217,7 +29221,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1722785420}
   - {fileID: 4813028189488083268}
-  - {fileID: 6703462720705035628}
   - {fileID: 1771559392}
   - {fileID: 2008401637287603027}
+  - {fileID: 6703462720705035628}
   - {fileID: 865053231}

@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 namespace World
 {
-    public class SceneTransition : MonoBehaviour
+    public class EnterBuilding : MonoBehaviour
     {
         [SerializeField]private string sceneName;
         
