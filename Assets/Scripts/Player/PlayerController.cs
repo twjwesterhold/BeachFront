@@ -1,3 +1,4 @@
+using Dialogue;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,10 +10,12 @@ namespace Player
         
         private Vector2 _currentDirection = Vector2.zero;
         private Rigidbody2D _rigidbody;
+        private DialogueManager _dialogueManager;
 
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
+            _dialogueManager = FindAnyObjectByType<DialogueManager>();
             GameObject spawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint");
             if (spawnPoint != null)
             {
@@ -22,6 +25,10 @@ namespace Player
 
         private void Update()
         {
+            if (_dialogueManager is not null && _dialogueManager.IsDialogueActive)
+            {
+                return;
+            }
             if (Keyboard.current.upArrowKey.isPressed)
             {
                 _currentDirection = Vector2.up;

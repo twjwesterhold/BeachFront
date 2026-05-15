@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Dialogue
 {
@@ -10,20 +11,32 @@ namespace Dialogue
         [SerializeField]private TextMeshProUGUI dialogueLineText;
         [SerializeField]private GameObject dialogueBox;
         
-        private Dialogue _currentDialogue;
+        private DialogueData _currentDialogue;
         private int _currentLineIndex;
+        private bool _justClosed;
+        
+        public bool IsDialogueActive => _currentDialogue is not null || _justClosed;
 
-        public void StartDialogue(Dialogue dialogue)
+        private void Update()
+        {
+            _justClosed = false;
+            if (_currentDialogue is not null && Keyboard.current.eKey.wasPressedThisFrame)
+            {
+                AdvanceDialogue();
+            }
+        }
+
+        public void StartDialogue(string npcName, string npcTitle, DialogueData dialogue)
         {
             _currentLineIndex = 0;
             _currentDialogue = dialogue;
-            OpenDialogueBox();
+            OpenDialogueBox(npcName, npcTitle);
             DisplayLine(_currentDialogue.Lines[_currentLineIndex]);
         }
 
         public void AdvanceDialogue()
         {
-            if (_currentDialogue == null)
+            if (_currentDialogue is null)
             {
                 return;
             }
@@ -43,16 +56,19 @@ namespace Dialogue
             dialogueLineText.text = line;
         }
 
-        private void OpenDialogueBox()
+        private void OpenDialogueBox(string npcName, string npcTitle)
         {
-            npcNameText.text = _currentDialogue.NPCName;
-            npcTitleText.text = _currentDialogue.NPCTitle;
             dialogueBox.SetActive(true);
+            npcNameText.text = npcName;
+            npcTitleText.gameObject.SetActive(!string.IsNullOrEmpty(npcTitle));
+            npcTitleText.text = npcTitle;
         }
 
         private void CloseDialogueBox()
         {
+            _justClosed = true;
             dialogueBox.SetActive(false);
+            _currentDialogue = null;
         }
     }
 }
