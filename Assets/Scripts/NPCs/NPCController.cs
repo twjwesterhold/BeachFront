@@ -1,4 +1,5 @@
 using Dialogue;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,10 +14,12 @@ namespace NPCs
         private bool _playerIsNearby;
         private DialogueManager _dialogueManager;
         private int _currentDialogueIndex;
+        private TextMeshPro _dialoguePrompt;
 
         private void Awake()
         {
             _dialogueManager = FindAnyObjectByType<DialogueManager>();
+            _dialoguePrompt = GetComponentInChildren<TextMeshPro>(true);
         }
 
         private void Update()
@@ -32,6 +35,7 @@ namespace NPCs
             if (other.CompareTag("Player"))
             {
                 _playerIsNearby = true;
+                _dialoguePrompt.gameObject.SetActive(true);
             }
         }
 
@@ -40,6 +44,7 @@ namespace NPCs
             if (other.CompareTag("Player"))
             {
                 _playerIsNearby = false;
+                _dialoguePrompt.gameObject.SetActive(false);
             }
         }
     }
