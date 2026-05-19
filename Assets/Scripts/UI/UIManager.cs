@@ -1,7 +1,9 @@
 using System;
 using Inventory;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 namespace UI
 {
@@ -9,7 +11,7 @@ namespace UI
     {
         [SerializeField] private GameObject inventoryPanel;
         [SerializeField] private Transform itemList;
-        [SerializeField] private GameObject itemRowPrefab;
+        [SerializeField] private ItemRow itemRowPrefab;
         
         private InventoryManager _inventoryManager;
         
@@ -18,6 +20,7 @@ namespace UI
         private void Awake()
         {
             _inventoryManager = transform.parent.GetComponentInChildren<InventoryManager>();
+            _inventoryManager.OnItemAdded += AddItemRow;
         }
 
         private void Update()
@@ -32,24 +35,13 @@ namespace UI
         {
             bool opening = !inventoryPanel.activeSelf;
             inventoryPanel.SetActive(opening);
-
-            if (opening)
-            {
-                PopulateInventory();
-            }
         }
 
-        private void PopulateInventory()
+        private void AddItemRow(Item item)
         {
-            foreach (Transform child in itemList)
-            {
-                Destroy(child.gameObject);
-            }
-
-            foreach (Item item in _inventoryManager.Items)
-            {
-                GameObject row = Instantiate(itemRowPrefab, itemList);
-            }
+            ItemRow row = Instantiate(itemRowPrefab, itemList);
+            row.itemName.text = item.ItemName;
+            row.itemIcon.sprite = item.ItemSprite;
         }
     }
 }

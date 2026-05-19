@@ -58,6 +58,11 @@ namespace Player
 
         private void FixedUpdate()
         {
+            if (_dialogueManager is not null && _dialogueManager.IsDialogueActive
+                || _uiManager is not null && _uiManager.IsInventoryOpen)
+            {
+                return;
+            }
             _rigidbody.MovePosition(_rigidbody.position + _currentDirection * (moveSpeed * Time.fixedDeltaTime));
         }
     }
