@@ -1,4 +1,5 @@
 using Dialogue;
+using UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,11 +12,14 @@ namespace Player
         private Vector2 _currentDirection = Vector2.zero;
         private Rigidbody2D _rigidbody;
         private DialogueManager _dialogueManager;
+        private UIManager _uiManager;
 
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _dialogueManager = FindAnyObjectByType<DialogueManager>();
+            _uiManager = FindAnyObjectByType<UIManager>();
+            
             GameObject spawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint");
             if (spawnPoint != null)
             {
@@ -25,7 +29,8 @@ namespace Player
 
         private void Update()
         {
-            if (_dialogueManager is not null && _dialogueManager.IsDialogueActive)
+            if (_dialogueManager is not null && _dialogueManager.IsDialogueActive
+                || _uiManager is not null && _uiManager.IsInventoryOpen)
             {
                 return;
             }
