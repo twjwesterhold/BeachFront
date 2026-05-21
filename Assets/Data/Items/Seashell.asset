@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2f50edab16454189ba7ce32626bb6a7, type: 3}
   m_Name: Seashell
   m_EditorClassIdentifier: Assembly-CSharp::Inventory.Item
-  itemName: seashell
+  itemName: Seashell
   itemSprite: {fileID: 21300000, guid: 5b2d844ab8f5b4b2eac4e0bd195f4a92, type: 3}

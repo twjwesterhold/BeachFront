@@ -10,6 +10,8 @@ namespace Inventory
         [SerializeField]private List<Item> items;
         
         public event Action<Item> OnItemAdded;
+        public event Action<Item> OnItemRemoved;
+        public event Action<int> OnMoneyChanged;
         
         public int Money => money;
         public List<Item> Items => items;
@@ -24,11 +26,13 @@ namespace Inventory
         public void RemoveItem(Item item)
         {
             items.Remove(item);
+            OnItemRemoved?.Invoke(item);
         }
-
+        
         public void AddMoney(int inflow)
         {
             money += inflow;
+            OnMoneyChanged?.Invoke(money);
         }
 
         public bool RemoveMoney(int outflow)
@@ -36,6 +40,7 @@ namespace Inventory
             if (money >= outflow)
             {
                 money -= outflow;
+                OnMoneyChanged?.Invoke(money);
                 return true;
             }
             return false;
