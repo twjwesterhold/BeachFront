@@ -20,6 +20,7 @@ namespace NPCs
         {
             _dialogueManager = FindAnyObjectByType<DialogueManager>();
             _dialoguePrompt = GetComponentInChildren<TextMeshPro>(true);
+            _dialoguePrompt.enabled = false;
         }
 
         private void Update()
@@ -35,7 +36,7 @@ namespace NPCs
             if (other.CompareTag("Player"))
             {
                 _playerIsNearby = true;
-                _dialoguePrompt.gameObject.SetActive(true);
+                _dialoguePrompt.enabled = true;
             }
         }
 
@@ -44,7 +45,7 @@ namespace NPCs
             if (other.CompareTag("Player"))
             {
                 _playerIsNearby = false;
-                _dialoguePrompt.gameObject.SetActive(false);
+                _dialoguePrompt.enabled = false;
             }
         }
     }

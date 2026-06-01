@@ -16,7 +16,8 @@ namespace World
         private void Awake()
         {
             GetComponent<SpriteRenderer>().sprite = item.ItemSprite;
-            _dialoguePrompt = GetComponentInChildren<TextMeshPro>(true);
+            _dialoguePrompt = GetComponentInChildren<TextMeshPro>();
+            _dialoguePrompt.enabled = false;
             _inventoryManager = FindAnyObjectByType<InventoryManager>();
         }
 
@@ -34,7 +35,7 @@ namespace World
             if (other.CompareTag("Player"))
             {
                 _playerIsNearby = true;
-                _dialoguePrompt.gameObject.SetActive(true);
+                _dialoguePrompt.enabled = true;
             }
         }
 
@@ -43,7 +44,7 @@ namespace World
             if (other.CompareTag("Player"))
             {
                 _playerIsNearby = false;
-                _dialoguePrompt.gameObject.SetActive(false);
+                _dialoguePrompt.enabled = false;
             }
         }
     }
