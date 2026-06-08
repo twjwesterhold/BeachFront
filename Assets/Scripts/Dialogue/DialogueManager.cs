@@ -125,7 +125,12 @@ namespace Dialogue
                         }
                     });
                     break;
-                case ChoiceData.ChoiceAction.OpenSell: break;
+                case ChoiceData.ChoiceAction.OpenSell:
+                    _uiManager.ToggleInventory(_inventoryManager.Items, item => {
+                        _inventoryManager.RemoveItem(item);
+                        _inventoryManager.AddMoney(item.ItemPrice / 2);
+                    });
+                    break;
                 // other cases
             }
     

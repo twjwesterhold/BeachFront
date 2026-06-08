@@ -63,14 +63,14 @@ namespace UI
                     _rowPool[_selectedItemIndex].OnSelect?.Invoke(_rowPool[_selectedItemIndex].item);
                     ToggleInventory();
                 }
-                else
+                else if (_justOpened)
                 {
                     _justOpened = false;
-                    return;
                 }
             }
             if (Keyboard.current.iKey.wasPressedThisFrame)
             {
+                _rowPool[_selectedItemIndex].caret.gameObject.SetActive(false);
                 ToggleInventory(_inventoryManager.Items, null);
             }
         }
