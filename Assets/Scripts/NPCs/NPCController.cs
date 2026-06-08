@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Dialogue;
 using Inventory;
 using TMPro;
+using UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,21 +19,21 @@ namespace NPCs
         private DialogueManager _dialogueManager;
         private int _currentDialogueIndex;
         private TextMeshPro _dialoguePrompt;
-        
-        public List<Item> NpcInventory => npcInventory;
+        private UIManager _uiManager;
 
         private void Awake()
         {
             _dialogueManager = FindAnyObjectByType<DialogueManager>();
             _dialoguePrompt = GetComponentInChildren<TextMeshPro>(true);
             _dialoguePrompt.enabled = false;
+            _uiManager = FindAnyObjectByType<UIManager>();
         }
 
         private void Update()
         {
-            if (_playerIsNearby && Keyboard.current.eKey.wasPressedThisFrame && !_dialogueManager.IsDialogueActive)
+            if (_playerIsNearby && Keyboard.current.eKey.wasPressedThisFrame && !_dialogueManager.IsDialogueActive && !_uiManager.IsInventoryOpen)
             {
-                _dialogueManager.StartDialogue(npcName, npcTitle, dialogues[_currentDialogueIndex]);
+                _dialogueManager.StartDialogue(npcName, npcTitle, dialogues[_currentDialogueIndex], npcInventory);
             }
         }
 

@@ -1,7 +1,7 @@
-using System;
+using System.Collections.Generic;
+using Inventory;
 using TMPro;
 using UI;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -22,12 +22,15 @@ namespace Dialogue
         private bool _justClosed;
         private int _selectedOptionIndex;
         private UIManager _uiManager;
+        private List<Item> _npcInventory;
+        private InventoryManager _inventoryManager;
         
         public bool IsDialogueActive => _currentDialogue is not null || _justClosed;
 
         private void Awake()
         {
             _uiManager = transform.parent.GetComponentInChildren<UIManager>();
+            _inventoryManager = transform.parent.GetComponentInChildren<InventoryManager>();
         }
 
         private void Update()
@@ -58,10 +61,11 @@ namespace Dialogue
             }
         }
 
-        public void StartDialogue(string npcName, string npcTitle, DialogueData dialogue)
+        public void StartDialogue(string npcName, string npcTitle, DialogueData dialogue, List<Item> npcInventory)
         {
             _currentLineIndex = 0;
             _currentDialogue = dialogue;
+            _npcInventory = npcInventory;
             OpenDialogueBox(npcName, npcTitle);
             DisplayLine(_currentDialogue.Lines[_currentLineIndex]);
         }
@@ -112,7 +116,15 @@ namespace Dialogue
             {
                 case ChoiceData.ChoiceAction.None: break;
                 case ChoiceData.ChoiceAction.EndDialogue: break;
-                case ChoiceData.ChoiceAction.OpenShop: break;
+                case ChoiceData.ChoiceAction.OpenShop: 
+                    _uiManager.ToggleInventory(_npcInventory, item => {
+                        if (_inventoryManager.RemoveMoney(item.ItemPrice))
+                        {
+                            _inventoryManager.AddItem(item);
+                            _npcInventory.Remove(item);
+                        }
+                    });
+                    break;
                 case ChoiceData.ChoiceAction.OpenSell: break;
                 // other cases
             }

@@ -7,8 +7,10 @@ namespace Inventory
     {
         [SerializeField]private string itemName;
         [SerializeField]private Sprite itemSprite;
+        [SerializeField]private int itemPrice;
         
         public string ItemName => itemName;
         public Sprite ItemSprite => itemSprite;
+        public int ItemPrice => itemPrice;
     }
 }

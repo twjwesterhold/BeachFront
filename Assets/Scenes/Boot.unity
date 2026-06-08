@@ -1245,6 +1245,7 @@ MonoBehaviour:
   itemList: {fileID: 1881872160}
   moneyText: {fileID: 926128360}
   itemRowPrefab: {fileID: 7261543856703006588, guid: 3e3cb53d29c0646dfb0f12ef8a43d813, type: 3}
+  poolSize: 16
 --- !u!1 &1321256600
 GameObject:
   m_ObjectHideFlags: 0
@@ -1741,7 +1742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce94b69e466fa4769ba3f446cc4967ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
-  money: 0
+  money: 5
   items: []
 --- !u!1 &2093660496
 GameObject:

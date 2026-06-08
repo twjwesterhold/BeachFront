@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Inventory.Item
   itemName: Lure
   itemSprite: {fileID: 21300000, guid: e6f1b18c928d14633b82cb5a8a8ddcc2, type: 3}
+  itemPrice: 5
