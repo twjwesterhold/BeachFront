@@ -1,6 +1,8 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+using Inventory;
 
 namespace UI
 {
@@ -8,5 +10,6 @@ namespace UI
     {
         public TextMeshProUGUI itemName;
         public Image itemIcon;
+        public Action<Item> OnSelect;
     }
 }

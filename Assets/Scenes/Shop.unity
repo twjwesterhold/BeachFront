@@ -127,6 +127,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3431826274779472466, guid: bc9cc57b6147041c5b09b4b20f4f0760, type: 3}
+      propertyPath: npcName
+      value: Dominique
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431826274779472466, guid: bc9cc57b6147041c5b09b4b20f4f0760, type: 3}
+      propertyPath: npcTitle
+      value: Shopkeeper
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431826274779472466, guid: bc9cc57b6147041c5b09b4b20f4f0760, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431826274779472466, guid: bc9cc57b6147041c5b09b4b20f4f0760, type: 3}
+      propertyPath: inventory.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431826274779472466, guid: bc9cc57b6147041c5b09b4b20f4f0760, type: 3}
+      propertyPath: 'dialogues.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: d5bf66b31a00341938de277ead68cbe7, type: 2}
+    - target: {fileID: 3431826274779472466, guid: bc9cc57b6147041c5b09b4b20f4f0760, type: 3}
+      propertyPath: 'inventory.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: f46b44f34391e42b19d444419275aa1f, type: 2}
+    - target: {fileID: 3431826274779472466, guid: bc9cc57b6147041c5b09b4b20f4f0760, type: 3}
+      propertyPath: npcInventory.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431826274779472466, guid: bc9cc57b6147041c5b09b4b20f4f0760, type: 3}
+      propertyPath: 'npcInventory.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: f46b44f34391e42b19d444419275aa1f, type: 2}
     - target: {fileID: 3840154752528898782, guid: bc9cc57b6147041c5b09b4b20f4f0760, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5
@@ -194,7 +226,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3400595433616971092, guid: bc9cc57b6147041c5b09b4b20f4f0760, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: bc9cc57b6147041c5b09b4b20f4f0760, type: 3}
 --- !u!1001 &419820700
 PrefabInstance:

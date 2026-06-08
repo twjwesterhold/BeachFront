@@ -17,7 +17,6 @@ public static class EditorBootstrapper
 
     private static void OnPlayModeStateChanged(PlayModeStateChange state)
     {
-        Debug.Log($"State: {state}, PreviousScene: {EditorPrefs.GetString(PreviousSceneKey, "empty")}");
         if (state == PlayModeStateChange.ExitingEditMode)
         {
             if (SceneManager.GetActiveScene().name != BootScene)
@@ -31,9 +30,7 @@ public static class EditorBootstrapper
         }
         else if (state == PlayModeStateChange.EnteredEditMode)
         {
-            Debug.Log("EnteredEditMode fired");
             string previousScene = EditorPrefs.GetString(PreviousSceneKey, "");
-            Debug.Log($"Restoring: {previousScene}");
             if (!string.IsNullOrEmpty(previousScene))
             {
                 EditorSceneManager.OpenScene(previousScene);

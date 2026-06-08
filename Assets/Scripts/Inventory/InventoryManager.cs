@@ -9,8 +9,8 @@ namespace Inventory
         [SerializeField]private int money;
         [SerializeField]private List<Item> items;
         
-        public event Action<Item> OnItemAdded;
-        public event Action<Item> OnItemRemoved;
+        // public event Action<Item> OnItemAdded;
+        // public event Action<Item> OnItemRemoved;
         public event Action<int> OnMoneyChanged;
         
         public int Money => money;
@@ -20,13 +20,13 @@ namespace Inventory
         public void AddItem(Item item)
         {
             items.Add(item);
-            OnItemAdded?.Invoke(item);
+            // OnItemAdded?.Invoke(item);
         }
 
         public void RemoveItem(Item item)
         {
             items.Remove(item);
-            OnItemRemoved?.Invoke(item);
+            // OnItemRemoved?.Invoke(item);
         }
         
         public void AddMoney(int inflow)

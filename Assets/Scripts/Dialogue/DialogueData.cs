@@ -6,7 +6,9 @@ namespace Dialogue
     public class DialogueData : ScriptableObject
     {
         [SerializeField]private string[] lines;
+        [SerializeField]private ChoiceData choice;
         
         public string[] Lines => lines;
+        public ChoiceData Choice => choice;
     }
 }

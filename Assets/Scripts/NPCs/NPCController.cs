@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using Dialogue;
+using Inventory;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,13 +10,16 @@ namespace NPCs
     public class NPCController : MonoBehaviour
     {
         [SerializeField]private string npcName;
-        [SerializeField] private string npcTitle;
+        [SerializeField]private string npcTitle;
         [SerializeField]private DialogueData[] dialogues;
+        [SerializeField]private List<Item> npcInventory;
         
         private bool _playerIsNearby;
         private DialogueManager _dialogueManager;
         private int _currentDialogueIndex;
         private TextMeshPro _dialoguePrompt;
+        
+        public List<Item> NpcInventory => npcInventory;
 
         private void Awake()
         {
