@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1164b0816fd504682b594dc46e948740
+guid: 8dd3d386943ed47a1887b80183bcf6b9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 780357220328858055
-    second: JoeSide_0
+      213: 5268473884595868589
+    second: FishingRod_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +49,7 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 7
+  alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}

@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 1164b0816fd504682b594dc46e948740
+guid: dfdc7eaa13b3b46ec9a4db7d5456c13c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 780357220328858055
-    second: JoeSide_0
+      213: 7322892494251654788
+    second: FishingRod-Sheet_0
+  - first:
+      213: 3140386253953445674
+    second: FishingRod-Sheet_1
+  - first:
+      213: -1614349060057218091
+    second: FishingRod-Sheet_2
+  - first:
+      213: 4023969410266742108
+    second: FishingRod-Sheet_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,10 +55,10 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 7
+  alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -113,14 +122,14 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BuildingFull_0
+      name: FishingRod-Sheet_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 0
-        width: 12
-        height: 15
-      alignment: 0
+        x: 0
+        y: 72
+        width: 44
+        height: 24
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -128,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 51e38065c2658caa0800000000000000
-      internalID: -6140563343497740779
+      spriteID: 48e7e38dce320a560800000000000000
+      internalID: 7322892494251654788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingRod-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 44
+        height: 24
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2f2a64d8a4e49b20800000000000000
+      internalID: 3140386253953445674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingRod-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 24
+        width: 44
+        height: 24
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d3cdc3451ea899e0800000000000000
+      internalID: -1614349060057218091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingRod-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 44
+        height: 24
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5dbcf5dbd208d730800000000000000
+      internalID: 4023969410266742108
       vertices: []
       indices: 
       edges: []
@@ -138,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 391644bd1b9bf4194b84b46fa1e95e5e
     internalID: 0
     vertices: []
     indices: 
@@ -146,9 +221,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      BuildingFull_0: -6140563343497740779
+      FishingRod-Sheet_0: 7322892494251654788
+      FishingRod-Sheet_1: 3140386253953445674
+      FishingRod-Sheet_2: -1614349060057218091
+      FishingRod-Sheet_3: 4023969410266742108
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

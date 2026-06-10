@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Inventory.Item
   itemName: Seashell
   itemSprite: {fileID: 21300000, guid: 5b2d844ab8f5b4b2eac4e0bd195f4a92, type: 3}
+  itemPrice: 10

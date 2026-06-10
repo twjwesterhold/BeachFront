@@ -60,7 +60,10 @@ namespace UI
                 }
                 if (!_justOpened && Keyboard.current.eKey.wasPressedThisFrame)
                 {
-                    _rowPool[_selectedItemIndex].OnSelect?.Invoke(_rowPool[_selectedItemIndex].item);
+                    if (_itemCount != 0)
+                    {
+                        _rowPool[_selectedItemIndex].OnSelect?.Invoke(_rowPool[_selectedItemIndex].item);
+                    }
                     ToggleInventory();
                 }
                 else if (_justOpened)
