@@ -23,6 +23,7 @@ public static class EditorBootstrapper
             {
                 EditorPrefs.SetString(PreviousSceneKey, SceneManager.GetActiveScene().path);
                 EditorPrefs.SetString("EditorBootstrapper.TargetScene", SceneManager.GetActiveScene().name);
+                EditorSceneManager.SaveOpenScenes();
                 EditorApplication.isPlaying = false;
                 EditorSceneManager.OpenScene("Assets/Scenes/Boot.unity");
                 EditorApplication.isPlaying = true;
