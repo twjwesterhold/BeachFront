@@ -6,7 +6,7 @@ namespace Dialogue
     
     public class ChoiceData : ScriptableObject
     {
-        public enum ChoiceAction { None, OpenShop, OpenSell, EndDialogue }
+        public enum ChoiceAction { None, OpenShop, OpenSell, EndDialogue, BuyPinaColada }
         
         [SerializeField]private string option1;
         [SerializeField]private string option2;

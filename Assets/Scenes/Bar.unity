@@ -5882,6 +5882,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 872212878910262846, guid: 18878f43f509b4682a1bd41c93750c05, type: 3}
+      propertyPath: spawnId
+      value: FromBeach
+      objectReference: {fileID: 0}
     - target: {fileID: 5315621706445097075, guid: 18878f43f509b4682a1bd41c93750c05, type: 3}
       propertyPath: m_Name
       value: SpawnPoint
@@ -6765,6 +6769,30 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3431826274779472466, guid: bc9cc57b6147041c5b09b4b20f4f0760, type: 3}
+      propertyPath: npcName
+      value: Salvador
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431826274779472466, guid: bc9cc57b6147041c5b09b4b20f4f0760, type: 3}
+      propertyPath: npcTitle
+      value: Bartender
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431826274779472466, guid: bc9cc57b6147041c5b09b4b20f4f0760, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431826274779472466, guid: bc9cc57b6147041c5b09b4b20f4f0760, type: 3}
+      propertyPath: 'dialogues.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 7740ec4180ce246e3a48f1421068527f, type: 2}
+    - target: {fileID: 3431826274779472466, guid: bc9cc57b6147041c5b09b4b20f4f0760, type: 3}
+      propertyPath: npcInventory.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431826274779472466, guid: bc9cc57b6147041c5b09b4b20f4f0760, type: 3}
+      propertyPath: 'npcInventory.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: bcac9471b5ad2448ca90c9d2dd086445, type: 2}
     - target: {fileID: 3732322777653531485, guid: bc9cc57b6147041c5b09b4b20f4f0760, type: 3}
       propertyPath: m_Size.x
       value: 0.75

@@ -131,6 +131,12 @@ namespace Dialogue
                         _inventoryManager.AddMoney(item.ItemPrice / 2);
                     });
                     break;
+                case ChoiceData.ChoiceAction.BuyPinaColada:
+                    if (_inventoryManager.RemoveMoney(_npcInventory[0].ItemPrice))
+                    {
+                        _inventoryManager.AddItem(_npcInventory[0]);
+                    }
+                    break;
                 // other cases
             }
     
