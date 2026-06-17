@@ -9,7 +9,6 @@ public static class EditorBootstrapper
     private const string PreviousSceneKey = "EditorBootstrapper.PreviousScene";
     private const string BootScene = "Boot";
     
-
     static EditorBootstrapper()
     {
         EditorApplication.playModeStateChanged += OnPlayModeStateChanged;

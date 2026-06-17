@@ -6,6 +6,7 @@ namespace World
     public class ExitBuilding : MonoBehaviour
     {
         [SerializeField]private string sceneName;
+        [SerializeField]private string buildingName;
         
         private SceneLoader _sceneLoader;
 
@@ -18,7 +19,7 @@ namespace World
         {
             if (other.CompareTag("Player"))
             { 
-                _sceneLoader.LoadScene(sceneName);
+                _sceneLoader.LoadScene(sceneName, buildingName);
             }
         }
     }

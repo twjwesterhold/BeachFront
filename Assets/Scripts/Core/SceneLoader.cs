@@ -7,6 +7,7 @@ namespace Core
 {
     public class SceneLoader : MonoBehaviour
     {
+        public static string TargetSpawnId;
         private UIManager _uiManager;
         
         private void Awake()
@@ -14,8 +15,9 @@ namespace Core
             _uiManager = transform.parent.GetComponentInChildren<UIManager>();
         }
 
-        public void LoadScene(string sceneName)
+        public void LoadScene(string sceneName, string spawnId = "Default")
         {
+            TargetSpawnId = spawnId;
             SceneManager.LoadScene(sceneName);
             if (sceneName == "Boot" || sceneName == "MainMenu")
             {

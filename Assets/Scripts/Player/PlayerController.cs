@@ -1,7 +1,9 @@
+using Core;
 using Dialogue;
 using UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using World;
 
 namespace Player
 {
@@ -20,10 +22,17 @@ namespace Player
             _dialogueManager = FindAnyObjectByType<DialogueManager>();
             _uiManager = FindAnyObjectByType<UIManager>();
             
-            GameObject spawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint");
-            if (spawnPoint != null)
+            SpawnPoint[] spawnPoints = FindObjectsByType<SpawnPoint>();
+            if (spawnPoints != null)
             {
-                transform.position = spawnPoint.transform.position;
+                foreach (SpawnPoint sp in spawnPoints)
+                {
+                    if (sp.SpawnId == SceneLoader.TargetSpawnId)
+                    {
+                        transform.position = sp.transform.position;
+                        break;
+                    }
+                }
             }
         }
 
