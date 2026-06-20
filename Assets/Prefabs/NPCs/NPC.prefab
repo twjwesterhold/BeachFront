@@ -274,7 +274,7 @@ SpriteRenderer:
   m_Size: {x: 0.625, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!70 &2716072788199540237
 CapsuleCollider2D:
@@ -311,7 +311,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.25}
-  m_Size: {x: 1.5, y: 1.5}
+  m_Size: {x: 2, y: 2}
   m_Direction: 0
 --- !u!70 &3732322777653531485
 CapsuleCollider2D:
@@ -365,3 +365,4 @@ MonoBehaviour:
   npcName: 
   npcTitle: 
   dialogues: []
+  npcInventory: []
