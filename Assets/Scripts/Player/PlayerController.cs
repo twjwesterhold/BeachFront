@@ -15,12 +15,14 @@ namespace Player
         private Rigidbody2D _rigidbody;
         private DialogueManager _dialogueManager;
         private UIManager _uiManager;
+        private Animator _animator;
 
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _dialogueManager = FindAnyObjectByType<DialogueManager>();
             _uiManager = FindAnyObjectByType<UIManager>();
+            _animator = GetComponent<Animator>();
             
             SpawnPoint[] spawnPoints = FindObjectsByType<SpawnPoint>();
             if (spawnPoints != null)
@@ -63,6 +65,8 @@ namespace Player
             {
                 _currentDirection = Vector2.zero;
             }
+            _animator.SetFloat("MoveX", _currentDirection.x);
+            _animator.SetFloat("MoveY", _currentDirection.y);
         }
 
         private void FixedUpdate()
