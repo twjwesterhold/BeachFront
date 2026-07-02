@@ -54,5 +54,10 @@ namespace NPCs
                 _dialoguePrompt.enabled = false;
             }
         }
+
+        public void SetDialogueIndex(int index)
+        {
+            _currentDialogueIndex = index;
+        }
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Inventory;
+using NPCs;
 using TMPro;
 using UI;
 using UnityEngine;
@@ -24,6 +25,7 @@ namespace Dialogue
         private UIManager _uiManager;
         private List<Item> _npcInventory;
         private InventoryManager _inventoryManager;
+        private JoeController _joeController;
         
         public bool IsDialogueActive => _currentDialogue is not null || _justClosed;
 
@@ -136,6 +138,9 @@ namespace Dialogue
                     {
                         _inventoryManager.AddItem(_npcInventory[0]);
                     }
+                    break;
+                case ChoiceData.ChoiceAction.CompleteJoeTrade:
+                    _joeController.CompleteTrade();
                     break;
                 // other cases
             }

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6821d2736784a4301958e2f6b13de30a
+guid: e62443be419e146628eaf6f3a80af440
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2660968328804394481
-    second: Stairs_0
+      213: -4230761501512888313
+    second: BeachChair_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
