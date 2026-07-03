@@ -27,6 +27,7 @@ namespace Dialogue
         private List<Item> _npcInventory;
         private InventoryManager _inventoryManager;
         private JoeController _joeController;
+        private bool _waitingToClose;
         
         public bool IsDialogueActive => _currentDialogue is not null || _justClosed;
 
@@ -38,6 +39,12 @@ namespace Dialogue
 
         private void Update()
         {
+            if (_waitingToClose && Keyboard.current.eKey.wasPressedThisFrame)
+            {
+                _waitingToClose = false;
+                CloseDialogueBox();
+                return;
+            }
             _justClosed = false;
             if (!optionsPanel.activeSelf)
             {
@@ -114,6 +121,10 @@ namespace Dialogue
             ChoiceData.ChoiceAction action = optionIndex == 0 
                 ? _currentDialogue.Choice.Option1Action 
                 : _currentDialogue.Choice.Option2Action;
+            
+            string response = optionIndex == 0 
+                ? _currentDialogue.Choice.Option1Response 
+                : _currentDialogue.Choice.Option2Response;
         
             switch (action)
             {
@@ -126,13 +137,13 @@ namespace Dialogue
                             _inventoryManager.AddItem(item);
                             _npcInventory.Remove(item);
                         }
-                    });
+                    }, () => DisplayLine("Thanks for shopping!"));
                     break;
                 case ChoiceData.ChoiceAction.OpenSell:
                     _uiManager.ToggleInventory(_inventoryManager.Items, item => {
                         _inventoryManager.RemoveItem(item);
                         _inventoryManager.AddMoney(item.ItemPrice / 2);
-                    });
+                    }, () => DisplayLine("Thanks for selling!"));
                     break;
                 case ChoiceData.ChoiceAction.BuyPinaColada:
                     if (_inventoryManager.RemoveMoney(_npcInventory[0].ItemPrice))
@@ -146,8 +157,16 @@ namespace Dialogue
                     break;
                 // other cases
             }
-    
-            CloseDialogueBox();
+            
+            if (!string.IsNullOrEmpty(response))
+            {
+                DisplayLine(response);
+                _waitingToClose = true;
+            }
+            else
+            {
+                CloseDialogueBox();
+            }
         }
 
         private void OpenDialogueBox(string npcName, string npcTitle)

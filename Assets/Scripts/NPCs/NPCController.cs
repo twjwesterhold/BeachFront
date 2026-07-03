@@ -20,6 +20,7 @@ namespace NPCs
         private int _currentDialogueIndex;
         private TextMeshPro _dialoguePrompt;
         private UIManager _uiManager;
+        private static Dictionary<string, List<Item>> _persistedInventories = new Dictionary<string, List<Item>>();
 
         private void Awake()
         {
@@ -27,6 +28,14 @@ namespace NPCs
             _dialoguePrompt = GetComponentInChildren<TextMeshPro>(true);
             _dialoguePrompt.enabled = false;
             _uiManager = FindAnyObjectByType<UIManager>();
+            if (_persistedInventories.ContainsKey(npcName))
+            {
+                npcInventory = _persistedInventories[npcName];
+            }
+            else
+            {
+                _persistedInventories.Add(npcName, npcInventory);
+            }
         }
 
         private void Update()

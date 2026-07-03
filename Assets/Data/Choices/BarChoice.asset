@@ -16,3 +16,5 @@ MonoBehaviour:
   option2: 'No '
   option1Action: 4
   option2Action: 3
+  option1Response: Enjoy, my friend!
+  option2Response: Come back if you get thirsty!

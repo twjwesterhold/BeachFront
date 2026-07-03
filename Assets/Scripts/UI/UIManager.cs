@@ -79,7 +79,7 @@ namespace UI
         }
         
         // ReSharper disable Unity.PerformanceAnalysis
-        public void ToggleInventory(List<Item> items = null, Action<Item> onSelect = null)
+        public void ToggleInventory(List<Item> items = null, Action<Item> onSelect = null, Action onClose = null)
         {
             bool opening = !inventoryPanel.activeSelf;
             if (opening)
@@ -90,6 +90,7 @@ namespace UI
             else
             {
                 _justClosed = true;
+                onClose?.Invoke();
             }
             _selectedItemIndex = 0;
             inventoryPanel.SetActive(opening);

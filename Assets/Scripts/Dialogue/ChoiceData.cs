@@ -19,5 +19,7 @@ namespace Dialogue
         public string Option2 => option2;
         public ChoiceAction Option1Action => option1Action;
         public ChoiceAction Option2Action => option2Action;
+        public string Option1Response => option1Response;
+        public string Option2Response => option2Response;
     }
 }
