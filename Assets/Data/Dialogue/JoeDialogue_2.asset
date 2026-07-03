@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c25c73cd70834a64b12e882897c9446, type: 3}
   m_Name: JoeDialogue_2
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue.DialogueData
-  lines: []
+  lines:
+  - Thanks for the bait and lure, son!
   choice: {fileID: 0}

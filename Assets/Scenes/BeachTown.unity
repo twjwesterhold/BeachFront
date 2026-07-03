@@ -331,12 +331,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3431826274779472466, guid: bc9cc57b6147041c5b09b4b20f4f0760, type: 3}
       propertyPath: dialogues.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3431826274779472466, guid: bc9cc57b6147041c5b09b4b20f4f0760, type: 3}
       propertyPath: 'dialogues.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: 17dd9e80981d4488ba24885136278c08, type: 2}
+    - target: {fileID: 3431826274779472466, guid: bc9cc57b6147041c5b09b4b20f4f0760, type: 3}
+      propertyPath: 'dialogues.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: ec2ba908ee3e9445f9f4e4689525cd12, type: 2}
+    - target: {fileID: 3431826274779472466, guid: bc9cc57b6147041c5b09b4b20f4f0760, type: 3}
+      propertyPath: 'dialogues.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 6ab6fb369cb1141fbb4541adc29d9921, type: 2}
     - target: {fileID: 3840154752528898782, guid: bc9cc57b6147041c5b09b4b20f4f0760, type: 3}
       propertyPath: m_LocalPosition.x
       value: -22

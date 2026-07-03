@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Inventory;
 using NPCs;
@@ -140,6 +141,7 @@ namespace Dialogue
                     }
                     break;
                 case ChoiceData.ChoiceAction.CompleteJoeTrade:
+                    _joeController = FindAnyObjectByType<JoeController>();
                     _joeController.CompleteTrade();
                     break;
                 // other cases
