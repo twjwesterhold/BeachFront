@@ -29,7 +29,7 @@ namespace Dialogue
         private JoeController _joeController;
         private bool _waitingToClose;
         
-        public bool IsDialogueActive => _currentDialogue is not null || _justClosed;
+        public bool IsDialogueActive => _currentDialogue is not null || _justClosed || _waitingToClose;
 
         private void Awake()
         {

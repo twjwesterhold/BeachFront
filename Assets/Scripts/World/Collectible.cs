@@ -14,7 +14,7 @@ namespace World
         private InventoryManager _inventoryManager;
         private bool _playerIsNearby;
         private TextMeshPro _dialoguePrompt;
-        private static Dictionary<string, GameObject> _collectibles;
+        private static HashSet<string> _collectedIds = new HashSet<string>();
 
         private void Awake()
         {
@@ -22,6 +22,10 @@ namespace World
             _dialoguePrompt = GetComponentInChildren<TextMeshPro>();
             _dialoguePrompt.enabled = false;
             _inventoryManager = FindAnyObjectByType<InventoryManager>();
+            if (_collectedIds.Contains(item.ItemName))
+            {
+                Destroy(gameObject);
+            }
         }
 
         private void Update()
@@ -33,10 +37,12 @@ namespace World
                     _inventoryManager.RemoveItem(playerSwap);
                     _inventoryManager.AddItem(item);
                     Destroy(gameObject);
+                    _collectedIds.Add(item.ItemName);
                 } else if (playerSwap is null)
                 {
                     _inventoryManager.AddItem(item);
                     Destroy(gameObject);
+                    _collectedIds.Add(item.ItemName);
                 }
             }
         }
