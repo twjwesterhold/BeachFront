@@ -8,6 +8,7 @@ namespace World
     public class Collectible : MonoBehaviour
     {
         [SerializeField] private Item item;
+        [SerializeField] private Item playerSwap;
 
         private InventoryManager _inventoryManager;
         private bool _playerIsNearby;
@@ -25,8 +26,16 @@ namespace World
         {
             if (_playerIsNearby && Keyboard.current.eKey.wasPressedThisFrame)
             {
-                _inventoryManager.AddItem(item);
-                Destroy(gameObject);
+                if (playerSwap is not null && _inventoryManager.Items.Contains(playerSwap))
+                {
+                    _inventoryManager.RemoveItem(playerSwap);
+                    _inventoryManager.AddItem(item);
+                    Destroy(gameObject);
+                } else if (playerSwap is null)
+                {
+                    _inventoryManager.AddItem(item);
+                    Destroy(gameObject);
+                }
             }
         }
 
