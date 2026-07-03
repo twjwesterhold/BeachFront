@@ -21,6 +21,7 @@ namespace UI
         private bool _justOpened;
         private bool _justClosed;
         private int _itemCount;
+        private Action _onClose;
 
         public bool IsInventoryOpen => inventoryPanel.activeSelf || _justOpened || _justClosed;
 
@@ -86,11 +87,13 @@ namespace UI
             {
                 PopulateInventory(items, onSelect);
                 _justOpened = true;
+                _onClose = onClose;
             }
             else
             {
                 _justClosed = true;
-                onClose?.Invoke();
+                _onClose?.Invoke();
+                _onClose = null;
             }
             _selectedItemIndex = 0;
             inventoryPanel.SetActive(opening);

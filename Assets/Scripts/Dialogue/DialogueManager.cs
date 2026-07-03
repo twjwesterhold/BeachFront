@@ -130,20 +130,32 @@ namespace Dialogue
             {
                 case ChoiceData.ChoiceAction.None: break;
                 case ChoiceData.ChoiceAction.EndDialogue: break;
-                case ChoiceData.ChoiceAction.OpenShop: 
-                    _uiManager.ToggleInventory(_npcInventory, item => {
+                case ChoiceData.ChoiceAction.OpenShop:
+                    _uiManager.ToggleInventory(_npcInventory, item =>
+                    {
                         if (_inventoryManager.RemoveMoney(item.ItemPrice))
                         {
                             _inventoryManager.AddItem(item);
                             _npcInventory.Remove(item);
                         }
-                    }, () => DisplayLine("Thanks for shopping!"));
+                    }, () =>
+                    {
+                        OpenDialogueBox("Dominique", "Shopkeeper");
+                        DisplayLine("Thanks for shopping!");
+                        _waitingToClose = true;
+                    });
                     break;
                 case ChoiceData.ChoiceAction.OpenSell:
-                    _uiManager.ToggleInventory(_inventoryManager.Items, item => {
+                    _uiManager.ToggleInventory(_inventoryManager.Items, item =>
+                    {
                         _inventoryManager.RemoveItem(item);
                         _inventoryManager.AddMoney(item.ItemPrice / 2);
-                    }, () => DisplayLine("Thanks for selling!"));
+                    }, () =>
+                    {
+                        OpenDialogueBox("Dominique", "Shopkeeper");
+                        DisplayLine("Thanks for selling!");
+                        _waitingToClose = true;
+                    });
                     break;
                 case ChoiceData.ChoiceAction.BuyPinaColada:
                     if (_inventoryManager.RemoveMoney(_npcInventory[0].ItemPrice))
@@ -160,7 +172,7 @@ namespace Dialogue
             
             if (!string.IsNullOrEmpty(response))
             {
-                DisplayLine(response);
+                DisplayLine(response); 
                 _waitingToClose = true;
             }
             else

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Inventory;
 using UnityEngine;
 using TMPro;
@@ -13,6 +14,7 @@ namespace World
         private InventoryManager _inventoryManager;
         private bool _playerIsNearby;
         private TextMeshPro _dialoguePrompt;
+        private static Dictionary<string, GameObject> _collectibles;
 
         private void Awake()
         {
