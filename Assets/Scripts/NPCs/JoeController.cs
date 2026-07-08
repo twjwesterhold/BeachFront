@@ -10,15 +10,22 @@ namespace NPCs
         [SerializeField]private Item lure;
         [SerializeField]private Item worms;
         [SerializeField]private Item hat;
+        [SerializeField]private Sprite postTradeSprite;
         
         private NPCController _npcController;
         private InventoryManager _inventoryManager;
-        private bool _tradeCompleted;
+        private static bool _tradeCompleted;
+        private SpriteRenderer _spriteRenderer;
         
         private void Awake()
         {
             _inventoryManager = FindAnyObjectByType<InventoryManager>();
             _npcController = GetComponent<NPCController>();
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+            if (_tradeCompleted)
+            {
+                _spriteRenderer.sprite = postTradeSprite;
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -47,6 +54,7 @@ namespace NPCs
             _inventoryManager.RemoveItem(worms);
             _inventoryManager.AddItem(hat);
             _tradeCompleted = true;
+            _spriteRenderer.sprite = postTradeSprite;
         }
     }
 }

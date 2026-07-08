@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2f50edab16454189ba7ce32626bb6a7, type: 3}
   m_Name: PinaColada
   m_EditorClassIdentifier: Assembly-CSharp::Inventory.Item
-  itemName: PinaColada
+  itemName: Pina Colada
   itemSprite: {fileID: 21300000, guid: b416c6922ed184f8681df4ba219d20e1, type: 3}
   itemPrice: 10

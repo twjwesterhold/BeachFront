@@ -5404,6 +5404,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3873763317042270577, guid: 8eb747d5d889846dd834554dbec40e51, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3873763317042270577, guid: 8eb747d5d889846dd834554dbec40e51, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3873763317042270577, guid: 8eb747d5d889846dd834554dbec40e51, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3873763317042270577, guid: 8eb747d5d889846dd834554dbec40e51, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4814415534613852704, guid: 8eb747d5d889846dd834554dbec40e51, type: 3}
       propertyPath: sceneName
       value: BeachTown
@@ -5414,11 +5430,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5875104176691751453, guid: 8eb747d5d889846dd834554dbec40e51, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5875104176691751453, guid: 8eb747d5d889846dd834554dbec40e51, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 5875104176691751453, guid: 8eb747d5d889846dd834554dbec40e51, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5659,11 +5675,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7639633751296758500, guid: 18878f43f509b4682a1bd41c93750c05, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7639633751296758500, guid: 18878f43f509b4682a1bd41c93750c05, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7639633751296758500, guid: 18878f43f509b4682a1bd41c93750c05, type: 3}
       propertyPath: m_LocalPosition.z
